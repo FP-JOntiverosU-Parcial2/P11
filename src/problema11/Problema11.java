@@ -17,7 +17,7 @@ public class Problema11 {
     public static void main(String[] args) {
        int n;
        n=solicitarDato();
-       conversorRomano(n);
+       conversorRomano(n);  //Se convierten las unidades
        System.out.println( "El numero " + n + " a romano es: " + conversorRomano(n) );
        mensajeSalida();
     }
@@ -32,14 +32,14 @@ public class Problema11 {
         int i, millares, centenas, decenas, unidades;
         String romano= "";
         
-        millares= n / 1000;
-        centenas= n /100 % 10;
+        millares= n / 1000;    //se ponen las equivalencias de un millar, centena, decenas, unidades
+        centenas= n /100 % 10; //se pone mod para que no afecte con las unidades siguientes 
         decenas= n / 10 % 10;
         unidades= n % 10;
         
         for(i=1; i<=millares;++i){
             romano= romano + "M";
-        }   
+        }                                        //se establece que sera cada numero que salga al dividir
         //centenas
         if(centenas==9){ romano= romano + "CM";
         
@@ -71,7 +71,7 @@ public class Problema11 {
          
          for (i=6; i<=unidades; i++){romano= romano + "I";
          }
-         } else if (decenas==4){romano=romano + "IV";
+         } else if (unidades==4){romano=romano + "IV";
          }
          else { for (i=1; i<=unidades; i++){ romano= romano + "I";}
          }
@@ -81,8 +81,8 @@ public class Problema11 {
 }
     
     public static void mensajeSalida(){
-        System.out.println("Gracias por usar el programa");
-        System.exit(0);
+        System.out.println("Gracias por usar el programa");   // se agradece
+        System.exit(0);   
     }
 
 }
